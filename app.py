@@ -1,14 +1,8 @@
-# func to see if one digit only
-def one_digit(val):
-    if len(val) == 1:
-        return True
-
-
-# func to ignore space
-def space_fix(space):
-    if ' ' in space:
-        space = space.strip()
-    return space
+from utils import space_fix, one_digit
+import memory_game
+import guess_game
+import currency_roulette_game
+from score import add_score
 
 
 def welcome():
@@ -23,6 +17,20 @@ def start_play():
         3: '3.Currency Roulette - try and guess the value of a random amount of USD in ILS'}
     for game in list_of_games:
         print(list_of_games[game])
+    user_pick = game_pick()
+    user_difficulty = game_difficulty()
+    if user_pick == 1:
+        memory_result = memory_game.play(user_difficulty)
+        if memory_result:
+            add_score(user_difficulty)
+    elif user_pick == 2:
+        guess_game_result = guess_game.play(user_difficulty)
+        if guess_game_result:
+            add_score(user_difficulty)
+    elif user_pick == 3:
+        currency_roulette_game_result = currency_roulette_game.play(user_difficulty)
+        if currency_roulette_game_result:
+            add_score(user_difficulty)
 
 
 # func for user input for game pick
@@ -45,4 +53,3 @@ def game_difficulty():
             return int(game_level)
         else:
             print('not valid value for difficulty level please try again')
-

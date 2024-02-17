@@ -1,16 +1,5 @@
 import random
-
-
-# func to see if one digit only
-def one_digit(val):
-    if len(val) == 1:
-        return True
-
-# func to ignore space
-def space_fix(space):
-    if ' ' in space:
-        space = space.strip()
-    return space
+from utils import one_digit,space_fix
 
 
 def generate_number(difficulty):
@@ -39,8 +28,9 @@ def compare_results(pc, user):
 def play(difficulty):
     pc_number = generate_number(difficulty)
     user_number = get_guess_from_user(difficulty)
-    if compare_results(pc_number, user_number):
+    result = compare_results(pc_number, user_number)
+    if result:
         print('Congratulations you win the game! :)')
     else:
         print(f'sorry you lost the game :( the number was: {pc_number}')
-
+    return result

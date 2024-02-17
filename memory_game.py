@@ -1,13 +1,6 @@
 import random
-import os
+from utils import Screen_cleaner, space_fix
 from time import sleep
-
-
-# func to ignore space
-def space_fix(space):
-    if ' ' in space:
-        space = space.strip()
-    return space
 
 
 def generate_sequence(difficulty):
@@ -17,7 +10,7 @@ def generate_sequence(difficulty):
         random_list.append(random_list_numbers)
     print(random_list)
     sleep(0.7)
-    os.system('cls')
+    Screen_cleaner()
     return random_list
 
 
@@ -45,7 +38,10 @@ def is_list_equal(pc, user):
 def play(difficulty):
     pc_list = generate_sequence(difficulty)
     user_list = get_list_from_user(difficulty)
-    if is_list_equal(pc_list, user_list):
+    result = is_list_equal(pc_list, user_list)
+    if result:
         print('Congratulations you win the game! :)')
     else:
         print(f'sorry you lost the game :( the list was: {pc_list} ')
+    return result
+

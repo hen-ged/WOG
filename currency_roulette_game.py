@@ -1,12 +1,6 @@
 import random
 import requests
-
-
-# func to ignore space
-def space_fix(space):
-    if ' ' in space:
-        space = space.strip()
-    return space
+from utils import space_fix
 
 
 def get_money_interval(amount):
@@ -50,8 +44,9 @@ def play(difficulty):
     secret_number = random.randint(1, 100)
     converted = get_money_interval(secret_number)
     user = get_guess_from_user(secret_number)
-    if compare_results(converted, user, difficulty):
+    result = compare_results(converted, user, difficulty)
+    if result:
         print('Congratulations you win the game! :)')
     else:
         print(f'sorry you lost the game :( it was: {converted} ILS')
-
+    return result
