@@ -1,5 +1,4 @@
 from utils import SCORES_FILE_NAME, file_exist, replace_txt
-from main_score import score_server
 
 
 def add_score(difficulty):
