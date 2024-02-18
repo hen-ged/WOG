@@ -24,5 +24,13 @@ def file_exist(file):
     return file_true
 
 
-SCORES_FILE_NAME = 'Scores.txt'
+def replace_txt(file_path, old_string, new_string):
+    file = open(file_path, 'r')
+    file_data = file.read()
+    file_data = file_data.replace(old_string, new_string)
+    file = open(file_path, 'w')
+    file.write(file_data)
+
+
+SCORES_FILE_NAME = 'templates/Scores.txt'
 BAD_RETURN_CODE = 0
