@@ -1,5 +1,5 @@
-from flask import Flask, render_template
-from utils import BAD_RETURN_CODE, SCORES_FILE_NAME, file_exist
+from flask import Flask
+from utils import BAD_RETURN_CODE, SCORES_FILE_NAME
 
 app = Flask(__name__)
 
@@ -7,9 +7,26 @@ app = Flask(__name__)
 @app.route('/')
 def score_server():
     if file_exist(SCORES_FILE_NAME):
-        return render_template('score_server.html', name='SCORES')
-    else:
-        return render_template('scores_error.html', name='ERROR')
+        return "<html>
+        <head>
+        <title>Scores Game</title>
+        </head>
+        <body>
+            <h1>The score is:</h1>
+            <div id="score">{SCORE}</div>
+        </body>
+        </html>"
+
+    elif BAD_RETURN_CODE:
+        return "<html>
+        <head>
+        <title>Scores Game</title>
+        </head>
+        <body>
+            <h1>ERROR:</h1>
+            <div id="score" style="color=red">{ERROR}</div>
+        </body>
+        </html>"
 
 
 if __name__ == '__main__':
