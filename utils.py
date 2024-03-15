@@ -32,5 +32,5 @@ def replace_txt(file_path, old_string, new_string):
     file.write(file_data)
 
 
-SCORES_FILE_NAME = 'templates/Scores.txt'
+SCORES_FILE_NAME = 'Scores.txt'
 BAD_RETURN_CODE = 0

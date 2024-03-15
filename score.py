@@ -3,7 +3,7 @@ from utils import SCORES_FILE_NAME, file_exist, replace_txt
 
 def add_score(difficulty):
     POINTS_OF_WINNING = (difficulty * 3) + 5
-    html_path = 'templates/score_server.html'
+    html_path = 'main_score.py'
     if file_exist(SCORES_FILE_NAME):
         score_file = open(SCORES_FILE_NAME, 'r')
         file_contents = score_file.readlines()
