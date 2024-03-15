@@ -27,7 +27,7 @@ def file_exist(file):
 def replace_txt(file_path, old_string, new_string):
     file = open(file_path, 'r')
     file_data = file.read()
-    file_data = file_data.replace(old_string, new_string)
+    file_data = file_data.replace(old_string,new_string)
     file = open(file_path, 'w')
     file.write(file_data)
 

@@ -12,7 +12,7 @@ def add_score(difficulty):
             score_file = open(SCORES_FILE_NAME, 'w')
             score_file.write(str(file_contents))
         print(file_contents)
-        replace_txt(html_path, '{SCORE}', file_contents)
+        replace_txt(html_path, '{SCORE}', str(file_contents))
         score_file.close()
     else:
         score_file = open(SCORES_FILE_NAME, 'w')
@@ -21,5 +21,5 @@ def add_score(difficulty):
         score_file = open(SCORES_FILE_NAME, 'r')
         file_con = score_file.read()
         print(file_con)
-        replace_txt(html_path, '{SCORE}', file_con)
+        replace_txt(html_path, '{SCORE}', str(file_con))
         score_file.close()
