@@ -6,4 +6,8 @@ services:
     image: henu1991/score
     ports:
       - "5000:5000"
-
+    jobs:
+    - name: push docker hub
+      commands:
+      - docker tag score:latest  henu1991/score:latest
+      - docker push henu1991/score:latest
