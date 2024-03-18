@@ -1,13 +1,21 @@
-version: '3.8'
-
+version: '3'
 services:
   web:
     build: .
-    image: henu1991/score
+    image: henu1991/score:1.0
     ports:
       - "5000:5000"
-    jobs:
-    - name: push docker hub
-      commands:
-      - docker tag score:latest  henu1991/score:latest
-      - docker push henu1991/score:latest
+  my_image_tagger:
+    image: henu1991/score:1.0
+    command: ["sh", "-c", "docker tag score henu1991/score:1.0"]
+    environment:
+      - DOCKER_CLI_ASK_PASS=0
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+  my_image_pusher:
+    image: henu1991/score:1.0
+    command: ["sh", "-c", "docker push henu1991/score:1.0"]
+    environment:
+      - DOCKER_CLI_ASK_PASS=0
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
