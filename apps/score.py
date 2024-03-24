@@ -1,4 +1,4 @@
-from apps.utils import SCORES_FILE_NAME, file_exist, replace_txt
+from config.utils import SCORES_FILE_NAME, file_exist, replace_txt
 
 
 def add_score(difficulty):

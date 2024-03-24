@@ -1,5 +1,5 @@
 from apps.app  import welcome, start_play
-from apps.utils import Screen_cleaner
+from config.utils import Screen_cleaner
 
 welcome()
 while True:

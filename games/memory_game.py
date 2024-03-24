@@ -1,5 +1,5 @@
 import random
-from apps.utils import Screen_cleaner, space_fix
+from config.utils import Screen_cleaner, space_fix
 from time import sleep
 
 

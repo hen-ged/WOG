@@ -1,7 +1,7 @@
-from utils import space_fix, one_digit
+from config.utils import space_fix, one_digit
 import games.memory_game
 import games.guess_game
-import games.currency_roulette_game
+import games.curre::ncy_roulette_game
 from score import add_score
 
 
