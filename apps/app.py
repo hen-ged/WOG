@@ -1,7 +1,7 @@
 from utils import space_fix, one_digit
-import memory_game
-import guess_game
-import currency_roulette_game
+import games.memory_game
+import games.guess_game
+import games.currency_roulette_game
 from score import add_score
 
 
@@ -20,15 +20,15 @@ def start_play():
     user_pick = game_pick()
     user_difficulty = game_difficulty()
     if user_pick == 1:
-        memory_result = memory_game.play(user_difficulty)
+        memory_result = games.memory_game.play(user_difficulty)
         if memory_result:
             add_score(user_difficulty)
     elif user_pick == 2:
-        guess_game_result = guess_game.play(user_difficulty)
+        guess_game_result = games.guess_game.play(user_difficulty)
         if guess_game_result:
             add_score(user_difficulty)
     elif user_pick == 3:
-        currency_roulette_game_result = currency_roulette_game.play(user_difficulty)
+        currency_roulette_game_result = games.currency_roulette_game.play(user_difficulty)
         if currency_roulette_game_result:
             add_score(user_difficulty)
 

@@ -1,6 +1,6 @@
 import random
 import requests
-from utils import space_fix
+from apps.utils import space_fix
 
 
 def get_money_interval(amount):

@@ -1,5 +1,5 @@
 import random
-from utils import one_digit,space_fix
+from apps.utils import one_digit,space_fix
 
 
 def generate_number(difficulty):

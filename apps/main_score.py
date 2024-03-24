@@ -1,5 +1,5 @@
 from flask import Flask
-from utils import BAD_RETURN_CODE, SCORES_FILE_NAME,file_exist
+from apps.utils import BAD_RETURN_CODE, SCORES_FILE_NAME,file_exist
 
 app = Flask(__name__)
 
