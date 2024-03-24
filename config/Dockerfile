@@ -1,5 +1,4 @@
 FROM python:3.8-alpine
-RUN mkdir /app
 WORKDIR /app
 COPY ./Requirements.txt app/Requirements.txt
 COPY ./Scores.txt app/Scores.txt
